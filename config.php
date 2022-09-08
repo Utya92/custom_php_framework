@@ -1,3 +1,10 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/FW/init.php";
-if (!defined('JOIN_CORE')) die();
+if (!defined('JOIN_CORE') || !JOIN_CORE) die();
+
+const TEMPLATE_ID = 'news';
+
+return $config = [
+    'templates' => ['id' => TEMPLATE_ID]];
+
+
+
