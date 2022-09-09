@@ -12,7 +12,7 @@ final class Application {
     public Page $pager; // объект класса Page
     private string $template;//full news path
 
-    protected function __construct() {
+    private function __construct() {
         $this->pager = Page::getInstance();
         $this->template = TEMPLATE_PATH . Config::get('templates/id'); //путь до темплейтс//news - localhost/templates/news
     }
