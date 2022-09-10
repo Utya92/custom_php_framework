@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace FW\Core;
+namespace  core;
 
 class Route {
 
