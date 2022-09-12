@@ -9,10 +9,8 @@ if (!defined('JOIN_CORE') || !JOIN_CORE) die(); ?>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <?php
-    use core\Page;
+    use src\core\Page;
     Page::showHead(); ?>
-
-
 </head>
 <body>
  mockHeader
