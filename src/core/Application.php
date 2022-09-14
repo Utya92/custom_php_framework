@@ -35,7 +35,7 @@ final class Application {
 повторно
   */
     public function includeComponent(string $component, string $template, array $params) {
-        require_once $_SERVER["DOCUMENT_ROOT"] . "/FW/src/components/$component/DefaultComponent.php";
+        require_once $_SERVER["DOCUMENT_ROOT"] . "/FW/src/components/$component/mock.php";
         $idName = $component; // myNews
         if (!isset($this->__components[$component])) {
             //с помощью рефлексии получаем все классы в массив
@@ -51,7 +51,7 @@ final class Application {
         //получаем алиас класса компонента
         $class = $this->__components[$component];
         // по алиасу создаём класс и запихиваем в его конструктор параметры
-        $createComponent = (new $class($idName, $template, $params));
+        $createComponent = new $class($idName, $template, $params);
         $createComponent->executeComponent();
     }
 

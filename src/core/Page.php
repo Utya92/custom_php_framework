@@ -42,7 +42,7 @@ class Page {
 
     //по ключу титл например я должен получить стринг(неточно)
     public function getProperty(string $id) {
-        return $this->pageContainer["PROPERTY"][$id];
+        return $this->pageContainer["PROPERTY"][$id]??'';
     }
 
     public function showProperty(string $id) {

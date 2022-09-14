@@ -1,6 +1,5 @@
 <?php
 if (!defined('JOIN_CORE') || !JOIN_CORE) die(); ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,5 +11,33 @@ if (!defined('JOIN_CORE') || !JOIN_CORE) die(); ?>
     use src\core\Page;
     Page::showHead(); ?>
 </head>
+
 <body>
- mockHeader
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navigation-></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link">Quack <span class="sr-only">(duck)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">test</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">go</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+</header>
+
+
+<!--mockHeader-->

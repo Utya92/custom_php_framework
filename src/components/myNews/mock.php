@@ -1,10 +1,10 @@
 <?php
 
-namespace src\components;
+namespace src\components\myNews;
 
 use src\core\component\base;
 
-class DefaultComponent extends Base {
+class Def extends Base {
 
     public function __construct($id, $template, $params) {
         $this->params = $params;
@@ -13,7 +13,7 @@ class DefaultComponent extends Base {
     }
 
     public function executeComponent() {
-        $this->result['h1'] = $this->params['h1'];
+        $this->result  = $this->params ;
         $this->template->render($this->result);
     }
 
