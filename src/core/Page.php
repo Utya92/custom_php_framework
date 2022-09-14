@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace src\core;
 
-use src\libs\Singleton;
+use src\common\Singleton;
 
 class Page {
     use Singleton;

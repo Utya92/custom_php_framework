@@ -5,7 +5,7 @@ namespace src\core;
 
 use src\core\type\Request;
 use src\core\type\Server;
-use src\libs\Singleton;
+use src\common\Singleton;
 
 
 final class Application {
