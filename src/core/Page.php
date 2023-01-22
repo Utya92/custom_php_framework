@@ -1,31 +1,30 @@
 <?php
 declare(strict_types=1);
 
-namespace core;
+namespace src\core;
 
-use libs\Singleton;
+use src\common\Singleton;
 
 class Page {
     use Singleton;
 
-    public array $pageContainer;
+    public array $pageContainer = [];
     private const JS_MACROS = "#MOCK_JS#";
     private const CSS_MACROS = "#MOCK_CSS#";
     private const STR_MACROS = "#MOCK_STR#";
 
-
     private function __construct() {
     }
 
-    //unique просто стринг
+    //unique
     public function addJs(string $src) {
-        $this->pageContainer[self::JS_MACROS][] = "$src";
+        $this->pageContainer[self::JS_MACROS][] = "<script src ='{$src}'></script>";
         $this->pageContainer[self::JS_MACROS] = array_unique($this->pageContainer[self::JS_MACROS]);
     }
 
-    //unique просто стринг
+    //unique
     public function addCss(string $link) {
-        $this->pageContainer[self::CSS_MACROS][] = "$link";
+        $this->pageContainer[self::CSS_MACROS][] = "<link rel='stylesheet' href='{$link}'>";
         $this->pageContainer[self::CSS_MACROS] = array_unique($this->pageContainer[self::CSS_MACROS]);
     }
 
@@ -41,9 +40,9 @@ class Page {
         $this->pageContainer["PROPERTY"][$id] = $value;
     }
 
-    //по ключу титл например я должен получить стринг
+    //по ключу титл например я должен получить стринг(неточно)
     public function getProperty(string $id) {
-        return $this->pageContainer["PROPERTY"][$id];
+        return $this->pageContainer["PROPERTY"][$id]??'';
     }
 
     public function showProperty(string $id) {
